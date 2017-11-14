@@ -44,5 +44,6 @@
     <module>kafka</module>
     <module>storm-kafka</module>
     <module>scala</module>
+    <module>spark</module>
   </modules>
 </project>

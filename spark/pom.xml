@@ -10,21 +10,11 @@
     <version>1.0.0-RELEASE</version>
   </parent>
 
-  <artifactId>hadoop</artifactId>
-  <name>hadoop</name>
+  <artifactId>spark</artifactId>
+  <name>spark</name>
   <packaging>pom</packaging>
 
   <dependencies>
-    <dependency>
-      <groupId>org.apache.hadoop</groupId>
-      <artifactId>hadoop-common</artifactId>
-      <version>2.7.4</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.hadoop</groupId>
-      <artifactId>hadoop-hdfs</artifactId>
-      <version>2.7.4</version>
-    </dependency>
     <dependency>
       <groupId>org.apache.hadoop</groupId>
       <artifactId>hadoop-client</artifactId>
@@ -33,6 +23,6 @@
   </dependencies>
 
   <modules>
-    <module>wordcount</module>
+    <module>simplepi</module>
   </modules>
 </project>
