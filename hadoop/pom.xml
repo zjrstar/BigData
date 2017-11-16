@@ -35,5 +35,6 @@
   <modules>
     <module>wordcount</module>
     <module>friendrecommend</module>
+    <module>weathersort</module>
   </modules>
 </project>

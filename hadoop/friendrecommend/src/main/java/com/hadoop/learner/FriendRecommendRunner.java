@@ -21,7 +21,7 @@ public class FriendRecommendRunner extends Configured implements Tool {
   public int run(String[] args) throws Exception {
     Configuration config = new Configuration();
     //如果在HFDS云端运行MapReduce，需要加上fs.defaultFs的set，相应的路径加hdfs上的路径
-    config.set("fs.defaultFS", "hdfs://myhadoop/");
+    //config.set("fs.defaultFS", "hdfs://myhadoop/");
 
     Job job = Job.getInstance(config);
 
