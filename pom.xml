@@ -45,5 +45,10 @@
     <module>storm-kafka</module>
     <module>scala</module>
     <module>spark</module>
+    <module>lucene</module>
+    <module>solr</module>
+    <module>elasticsearch</module>
+    <module>zookeeper</module>
+    <module>netty</module>
   </modules>
 </project>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>千度一下</title>
+</head>
+<body>
+<h1 th:inline="text">欢迎使用千度一下!</h1>
+<form th:action="@{/search}" method="post">
+    <div><label> 关键字 : <input type="text" th:value="${keyWord}" name="keyWord"/> </label></div>
+    <div><input type="submit" value="立即搜索"/></div>
+</form>
+<br/>
+<br/>
+<th:if test="&{ ! empty page.list}" >
+千度为您找到的相关结果约100,000,000个
+<div th:each="content:${page.list}">
+    <a th:utext="${content.content}"></a>
+    <br/>
+    <a th:href="${content.url}" th:text="${content.url}"></a>
+    <br/>
+    <br/>
+</div>
+</th:if>
+<th:if test="${page.hasPrePage}">
+    <a href="/search?keyWord=${keyWord}&currentPageNum=${page.prePage}">上一页</a>
+</th:if>
+<th:each begin="${page.pageSize}" end="${page.currentcount}" step="1" var="num">
+    <th:choose>
+        <th:when test="${num == page.currentPageNum}">
+            <a>$num</a>
+        </th:when>
+        <th:otherwise>
+            <a href="/search?keyWord=${keyWord}&currentPageNum=${num}">$num</a>
+        </th:otherwise>
+    </th:choose>
+</th:each>
+<th:if test="${page.hasNextPage}">
+<a href="/search?keyWord=${keyWord}&currentPageNum=${page.prePage}">下一页</a>
+</th:if>
+</body>
+</html>
